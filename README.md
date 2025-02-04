@@ -22,9 +22,11 @@ This contract provides the core functionality of an ERC-20 token, with added cap
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-repository.git
-cd your-repository
+git clone https://github.com/nurlyybekovva/erc20-token
+cd erc20-token
 ```
+
+![Clone Repository](./screenshots/clone_repo.png)
 
 ---
 
@@ -34,6 +36,8 @@ cd your-repository
 npm install
 ```
 
+![Install Dependencies](./screenshots/dependencies.png)
+
 ---
 
 ### Run Unit Tests
@@ -42,7 +46,7 @@ npm install
 npx hardhat test
 ```
 
-![Run Tests](./screenshots/)
+![Run Tests](./screenshots/tests.png)
 
 ---
 
@@ -54,7 +58,7 @@ Set up a local blockchain (e.g., Ganache), and then deploy the contract using:
 npx hardhat run scripts/deploy.js --network ganache
 ```
 
-![Deploy Contract](./screenshots/)
+![Deploy Contract](./screenshots/deploy.png)
 
 ---
 
@@ -64,12 +68,11 @@ npx hardhat run scripts/deploy.js --network ganache
 
 Fetch the token balance of the contract’s owner:
 
-```javascript
-const balance = await token.balanceOf(owner.address);
-console.log("Balance:", ethers.utils.formatUnits(balance, 18));
+```bash
+npx hardhat run scripts/checkBalance.js --network ganache
 ```
 
-![Check Balance](./screenshots/)
+![Check Balance](./screenshots/checkBalance.png)
 
 ---
 
@@ -77,11 +80,11 @@ console.log("Balance:", ethers.utils.formatUnits(balance, 18));
 
 Send 100 tokens to a different address:
 
-```javascript
-await token.transfer(addr1.address, ethers.utils.parseUnits("100", 18));
+```bash
+npx hardhat run scripts/transfer.js --network ganache
 ```
 
-![Transaction Example](./screenshots/)
+![Transaction Example](./screenshots/transfer.png)
 
 ---
 
@@ -89,51 +92,26 @@ await token.transfer(addr1.address, ethers.utils.parseUnits("100", 18));
 
 1. Get the sender’s address from the latest transaction:
 
-   ```javascript
-   const sender = await token.getTransactionSender();
-   console.log("Sender address:", sender);
+   ```bash
+   npx hardhat run scripts/getSender.js --network ganache
    ```
 
-   ![Get Sender](./screenshots/)
+   ![Get Sender](./screenshots/getSender.png)
 
 2. Get the receiver’s address of the most recent transaction:
 
-   ```javascript
-   const receiver = await token.getTransactionReceiver();
-   console.log("Receiver address:", receiver);
+   ```bash
+   npx hardhat run scripts/getReceiver.js --network ganache
    ```
 
-   ![Get Receiver](./screenshots/)
+   ![Get Receiver](./screenshots/getReceiver.png)
 
 3. Fetch the timestamp of the latest transaction:
 
-   ```javascript
-   const timestamp = await token.getTransactionTimestamp();
-   console.log("Last transaction timestamp:", timestamp);
+   ```bash
+   npx hardhat run scripts/getTimestamp.js --network ganache
    ```
 
-   ![Get Timestamp](./screenshots/)
+   ![Get Timestamp](./screenshots/timestamp.png)
 
 ---
-
-## Project Screenshots
-
-Below are some key screenshots showcasing the project setup and actions:
-
-1. Cloning the repository:
-   ![Clone Repository](./screenshots/)
-
-2. Installing necessary dependencies:
-   ![Install Dependencies](./screenshots/)
-
-3. Running unit tests:
-   ![Run Tests](./screenshots/)
-
-4. Deploying the smart contract:
-   ![Deploy Contract](./screenshots/)
-
-5. Usage examples:
-   - Check token balance.
-   - Execute a transfer.
-   - Fetch transaction details.
-```

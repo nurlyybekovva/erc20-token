@@ -1,19 +1,16 @@
 {
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.18"
+  "name": "erc20-token",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "hardhat test"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.2.0",
-    "dotenv": "^16.4.7"
+    "@openzeppelin/contracts": "^5.0.1"
   },
-  "name": "erc20_token",
-  "version": "1.0.0",
-  "main": "hardhat.config.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "chai": "^4.5.0",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.22.0"
+  }
 }
